@@ -10,7 +10,9 @@ export default async function AdminDashboard({
 }: {
   searchParams: { page?: string };
 }) {
-  const currentPage = Number(searchParams.page) || 1;
+  // Ensure searchParams is handled properly
+  const page = searchParams?.page;
+  const currentPage = page ? Number(page) : 1;
   const skip = (currentPage - 1) * ITEMS_PER_PAGE;
 
   const [records, totalRecords] = await Promise.all([

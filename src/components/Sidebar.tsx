@@ -31,6 +31,13 @@ export default function Sidebar({ role }: { role: string | null | undefined }) {
                 <span>Pasien Account</span>
               </Link>
               <Link
+                href="/dashboard/admin/accounts-admin"
+                className="flex items-center gap-3 p-3 rounded-lg hover:bg-purple-500/10 transition-colors group"
+              >
+                <FaUsers className="text-purple-400 group-hover:text-purple-300" />
+                <span>Admin Account</span>
+              </Link>
+              <Link
                 href="/dashboard/admin/accident"
                 className="flex items-center gap-3 p-3 rounded-lg hover:bg-purple-500/10 transition-colors group"
               >

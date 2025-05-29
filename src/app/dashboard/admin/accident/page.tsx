@@ -35,12 +35,9 @@ export default function SensorDataPage() {
           <div className="bg-gradient-to-r from-kuromi-primary to-kuromi-secondary rounded-t-2xl p-6 border-b-2 border-kuromi-accent">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-semibold text-white flex items-center">
-                <FontAwesomeIcon icon={faChartLine} className="mr-2" />
-                Data Sensor Jatuh (ESP32)
+                <FontAwesomeIcon icon={faChartLine} className="mr-6" />
+                Fall Sensor Data
               </h2>
-              <span className="px-4 py-2 rounded-full bg-kuromi-accent text-kuromi-secondary text-sm font-medium">
-                Real-time Monitoring
-              </span>
             </div>
           </div>
           
