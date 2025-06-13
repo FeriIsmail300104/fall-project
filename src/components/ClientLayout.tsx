@@ -17,15 +17,15 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
   }
 
   return (
-    <>
-      {/* Render sidebar jika ada role */}
+    <div
+      className="h-full w-full grid bg-gradient-to-br from-gray-900 to-purple-900"
+      style={{
+        gridTemplateColumns: role ? "256px 1fr" : "1fr",
+        gap: 0,
+      }}
+    >
       {role && <SidebarClient role={role} />}
-
-      <main
-        className={`transition-all duration-300 p-6 ${role ? "md:ml-64" : ""}`}
-      >
-        {children}
-      </main>
-    </>
+      <main className="overflow-auto p-6">{children}</main>
+    </div>
   );
 }

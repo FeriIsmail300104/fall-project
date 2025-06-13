@@ -1,11 +1,13 @@
-'use client';
+"use client";
 
-import { config } from '@fortawesome/fontawesome-svg-core';
-import '@fortawesome/fontawesome-svg-core/styles.css';
+import { SessionProvider } from "next-auth/react";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { ReactNode } from "react";
 
-// Prevent FontAwesome from adding its CSS since we did it manually above
+// FontAwesome fix
 config.autoAddCss = false;
 
-export function Providers({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
-} 
+export function Providers({ children }: { children: ReactNode }) {
+  return <SessionProvider>{children}</SessionProvider>; // ✅ session context provided
+}

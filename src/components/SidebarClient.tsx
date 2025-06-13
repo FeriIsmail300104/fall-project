@@ -4,8 +4,8 @@ import Sidebar from "./Sidebar";
 
 export default function SidebarClient({ role }: { role: string }) {
   return (
-    <div className="fixed top-0 left-0 h-full w-64 z-40 bg-white shadow-lg">
+    <div className="h-full w-64 flex-shrink-0 bg-white">
       <Sidebar role={role} />
-    </div>
-  );
+    </div>
+  );
 }
