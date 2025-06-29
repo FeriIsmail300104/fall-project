@@ -53,7 +53,7 @@ export async function POST(request: Request) {
         message: "Akun pasien berhasil ditambahkan!",
         data: {
           email,
-          password: "[TERENKRIPSI]", // jangan tampilkan asli
+          password: "[TERENKRIPSI]",    
           fullName,
           address,
           dob,
