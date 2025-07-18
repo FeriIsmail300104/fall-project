@@ -36,7 +36,6 @@ export async function POST(req: Request) {
       email,
       password: hashed,
       role: "ADMIN",
-<<<<<<< HEAD
       fullName,
       noHp,
       position,
@@ -47,10 +46,5 @@ export async function POST(req: Request) {
   const resetLink = `http://localhost:3000/reset-password?email=${encodeURIComponent(email)}`;
   await sendAdminAccountEmail({ to: email, email, resetLink });
 
-=======
-    },
-  });
-
->>>>>>> e027c2da78df6007486f21dcb95035d1cf638be2
   return NextResponse.json(user);
 }
