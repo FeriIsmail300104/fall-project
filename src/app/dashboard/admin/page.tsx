@@ -2,12 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { FiPlus, FiX, FiEdit, FiTrash, FiChevronDown } from "react-icons/fi";
-<<<<<<< HEAD
 import fetchWithAuth from "@/lib/fetchWithAuth";
 import { useSession } from "next-auth/react";
 import ProfileMenu from "@/components/ProfileMenu";
-=======
->>>>>>> e027c2da78df6007486f21dcb95035d1cf638be2
 
 interface Patient {
   id: string;
@@ -52,12 +49,9 @@ export default function AdminDashboard() {
     tanggal: "",
   });
 
-<<<<<<< HEAD
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [deleteRecord, setDeleteRecord] = useState<MedicalRecord | null>(null);
 
-=======
->>>>>>> e027c2da78df6007486f21dcb95035d1cf638be2
   // Helper function to format date
   const formatDate = (dateString: string | null) => {
     console.log("formatDate input:", dateString, typeof dateString); // Debug log
@@ -84,13 +78,8 @@ export default function AdminDashboard() {
   const load = async () => {
     try {
       const [r, p] = await Promise.all([
-<<<<<<< HEAD
         fetchWithAuth("/api/medical-records").then((res) => res.json()),
         fetchWithAuth("/api/patients").then((res) => res.json()),
-=======
-        fetch("/api/medical-records").then((res) => res.json()),
-        fetch("/api/patients").then((res) => res.json()),
->>>>>>> e027c2da78df6007486f21dcb95035d1cf638be2
       ]);
       console.log("Loaded patients:", p); // Debug log untuk melihat struktur data
       setRecords(r);
@@ -156,11 +145,7 @@ export default function AdminDashboard() {
     };
 
     try {
-<<<<<<< HEAD
       const res = await fetchWithAuth(url, {
-=======
-      const res = await fetch(url, {
->>>>>>> e027c2da78df6007486f21dcb95035d1cf638be2
         method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(submitData),
@@ -215,23 +200,14 @@ export default function AdminDashboard() {
   };
 
   const handleDelete = async (id: string) => {
-<<<<<<< HEAD
     try {
       const res = await fetchWithAuth(`/api/medical-records/${id}`, {
-=======
-    const confirmDelete = confirm("Yakin ingin menghapus data ini?");
-    if (!confirmDelete) return;
-
-    try {
-      const res = await fetch(`/api/medical-records/${id}`, {
->>>>>>> e027c2da78df6007486f21dcb95035d1cf638be2
         method: "DELETE",
       });
       if (res.ok) {
         alert("✅ Data berhasil dihapus");
         load();
       } else {
-<<<<<<< HEAD
         let data = {};
         try {
           const text = await res.text();
@@ -246,13 +222,6 @@ export default function AdminDashboard() {
         setIsOpen(false);
         return;
       }
-=======
-        const data = await res.json();
-        alert("❌ " + (data.error || "Gagal menghapus data"));
-      }
-    } catch (error) {
-      console.error("Error deleting record:", error);
->>>>>>> e027c2da78df6007486f21dcb95035d1cf638be2
       alert("❌ Terjadi kesalahan saat menghapus data");
     }
   };
