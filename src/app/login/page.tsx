@@ -33,7 +33,6 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-gray-900 to-purple-900 relative overflow-hidden">
-      {/* Background Medical Icons */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-10 left-10 text-purple-500/10 text-6xl">
           <FaHospital />

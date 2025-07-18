@@ -31,6 +31,15 @@ export default function PatientAccounts() {
     noHp: "",
   });
 
+  const [editAccount, setEditAccount] = useState({
+    id: "",
+    fullName: "",
+    email: "",
+    address: "",
+    dob: "",
+    password: "",
+  });
+
   useEffect(() => {
     const getData = async () => {
       const res = await fetchWithAuth("/api/accounts");
